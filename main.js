@@ -7,7 +7,7 @@ var overlay = document.querySelector('.display');
 
 
 
-for(var i = 1; i <= 7; i++) {
+for(var i = 1; i <= 11; i++) {
   var newImage = document.createElement('img');
   newImage.setAttribute('src', 'img/img' + i + '.jpg');
   thumbBar.appendChild(newImage);
@@ -15,6 +15,14 @@ for(var i = 1; i <= 7; i++) {
     var imgSrc = e.target.getAttribute('src');
     displayImage(imgSrc);
   }
+}
+
+document.onkeydown = function(e){
+    e = e || window.event;
+    var key = e.which || e.keyCode;
+    if(key===84){
+        example();
+    }
 }
 
 function displayImage(imgSrc) {
@@ -35,3 +43,4 @@ btn.onclick = function() {
     displayedImage.style.opacity = '1';
   }
 }
+

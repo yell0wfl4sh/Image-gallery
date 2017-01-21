@@ -4,8 +4,6 @@ h1 {
 }
 
 body {
-  width: 911px;
-  margin: 0 auto;
   background-color: black;
   color: white;
 }
@@ -13,16 +11,15 @@ body {
 .full-img {
   position: relative;
   display: block;
-  height: 512px;
-  width:911px;
+  margin:0 auto;
+
+
 }
 
 .dislay {
   position: absolute;
   top: 0;
   left: 0;
-  height: 512px;
-  width:911px;
   background-color: rgba(0,0,0,0);
 }
 
@@ -33,18 +30,30 @@ button {
   border: 1px solid #999;
   position: absolute;
   cursor: pointer;
-  top: 2px;
-  left: 2px;
+  margin-left: 2%;
+  top: 2%;
+
 }
 
 .thumb-bar img {
   display: block;
-  width: 14.28%;
-  float: left;
+  width: 100%;
   cursor: pointer;
 }
 
 .displayed-img{
-  height: 512px;
-  width:911px;
+  width: 100%;
+
+}
+.container-fluid{
+  margin-top: -1%;
+}
+
+.col-sm-11{
+  padding: 0px;
+  height: 100%
+}
+
+.col-sm-1{
+  padding: 0px;
 }

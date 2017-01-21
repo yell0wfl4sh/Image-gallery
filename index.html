@@ -2,7 +2,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"> 
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <title>Image gallery</title>
 
@@ -11,16 +15,20 @@
   </head>
 
   <body>
-    <h1>Image gallery </h1>
-
+  <div class="container-fluid">
+  <div class="row">
+  <div class="col-sm-11">
     <div class="full-img">
       <img class="displayed-img" src="img/img1.jpg">
       <div class="display"></div>
       <button class="dark">Darken</button>
+      </div>
     </div>
-
+    <div class="col-sm-1">
     <div class="thumb-bar">
-
+    </div>
+    </div>
+    </div>
 
     </div>
     <script src="main.js"></script>
