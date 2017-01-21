@@ -39,6 +39,7 @@ button {
   display: block;
   width: 100%;
   cursor: pointer;
+  opacity: 0.3;
 }
 
 .displayed-img{
@@ -56,4 +57,13 @@ button {
 
 .col-sm-1{
   padding: 0px;
+}
+#updir{
+  z-index: 1;
+  margin-left: 50%;
+}
+#downdir{
+  z-index: 1;
+  margin-left: 50%;
+  margin-top:  52%
 }
