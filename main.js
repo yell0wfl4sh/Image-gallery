@@ -31,6 +31,27 @@ for(var i = 1; i <= 11; i++) {
         displayImage(imgSrc1);
     }}
 */
+/*
+function keyListener(event){ 
+    //whatever we want to do goes in this block
+    event = event || window.event; //capture the event, and ensure we have an event
+    var key = event.key || event.which || event.keyCode; //find the key that was pressed
+    //MDN is better at this: https://developer.mozilla.org/en-US/docs/DOM/event.which
+    if(key===84){ //this is for 'T'
+        alert("hello");
+    }
+  }
+  */
+
+function checkKey(e) {
+    e = e || window.event;
+    var key = event.key || event.which || event.keyCode;
+    if (key==38){
+      upimage();
+}
+}
+
+document.onkeydown = checkKey;
 function displayImage(imgSrc) {
   displayedImage.setAttribute('src', imgSrc);
 }
@@ -51,6 +72,9 @@ opacitybtn.onclick = function() {
 }
 
 upbtn.onclick=function(){
+  upimage();
+}
+function upimage(){
   var current = displayedImage.getAttribute('src');
   var index = images.indexOf(current)- 1;
   if (index== -1){

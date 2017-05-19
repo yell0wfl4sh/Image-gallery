@@ -1,3 +1,6 @@
+html,body{
+  height: 100%;
+}
 h1 {
   font-family: helvetica, arial, sans-serif;
   text-align: center;
@@ -12,8 +15,6 @@ body {
   position: relative;
   display: block;
   margin:0 auto;
-
-
 }
 
 .dislay {
