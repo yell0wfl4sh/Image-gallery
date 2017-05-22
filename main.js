@@ -22,15 +22,6 @@ for(var i = 1; i <= 11; i++) {
   }
 }
 
-function checkKey(e) {
-    e = e || window.event;
-    var key = event.key || event.which || event.keyCode;
-    if (key==38){
-      upimage();
-}
-}
-
-document.onkeydown = checkKey;
 function displayImage(imgSrc) {
   displayedImage.setAttribute('src', imgSrc);
 }
@@ -79,14 +70,6 @@ else{
 }
 }
 
- const inputs = document.querySelectorAll(`.controls input`);
-    function updateValue(){
-      const suffix = this.dataset.sizing || '';
-      document.documentElement.style.setProperty(`--${this.name}`,this.value+suffix);
-    }
-    
-    inputs.forEach(input => input.addEventListener('change',updateValue));
-    inputs.forEach(input => input.addEventListener('mousemove',updateValue));
 
 function changeImg(e){
   if(e.keyCode=="38"){
@@ -98,3 +81,15 @@ function changeImg(e){
 }
 
 window.addEventListener(`keydown`,changeImg);
+
+
+
+//*********Controls**********
+const inputs = document.querySelectorAll(`.controls input`);
+function updateValue(){
+  const suffix = this.dataset.sizing || '';
+  document.documentElement.style.setProperty(`--${this.name}`,this.value+suffix);
+}
+
+inputs.forEach(input => input.addEventListener('change',updateValue));
+inputs.forEach(input => input.addEventListener('mousemove',updateValue));
