@@ -1,3 +1,8 @@
+:root {
+      --spacing: 10px;
+      --blur: 10px;
+      --base: #ffc600;
+    }
 html,body{
   height: 100%;
 }
@@ -43,20 +48,22 @@ button {
   opacity: 0.3;
 }
 
-.displayed-img{
-  width: 100%;
-
+#image{
+  padding: var(--spacing);
+  background: var(--base);
+  filter: blur(var(--blur));
+  width:100%;
 }
 .container-fluid{
   margin-top: -1%;
 }
 
-.col-sm-11{
+.main{
   padding: 0px;
-  height: 100%
+  overflow: hidden;
 }
 
-.col-sm-1{
+.side{
   padding: 0px;
 }
 #updir{

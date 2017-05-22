@@ -1,4 +1,4 @@
-var displayedImage = document.querySelector('.displayed-img');
+var displayedImage = document.querySelector('#image');
 var thumbBar = document.querySelector('.thumb-bar');
 
 
@@ -21,27 +21,6 @@ for(var i = 1; i <= 11; i++) {
     displayImage(imgSrc);
   }
 }
-
-/*
-.onkeydown = function(e){
-    e = e || window.event;
-    var key = e.which || e.keyCode;
-    if(key===84){
-        var imgSrc1 = e.target.('img/img1.jpg');
-        displayImage(imgSrc1);
-    }}
-*/
-/*
-function keyListener(event){ 
-    //whatever we want to do goes in this block
-    event = event || window.event; //capture the event, and ensure we have an event
-    var key = event.key || event.which || event.keyCode; //find the key that was pressed
-    //MDN is better at this: https://developer.mozilla.org/en-US/docs/DOM/event.which
-    if(key===84){ //this is for 'T'
-        alert("hello");
-    }
-  }
-  */
 
 function checkKey(e) {
     e = e || window.event;
@@ -74,6 +53,7 @@ opacitybtn.onclick = function() {
 upbtn.onclick=function(){
   upimage();
 }
+
 function upimage(){
   var current = displayedImage.getAttribute('src');
   var index = images.indexOf(current)- 1;
@@ -86,6 +66,9 @@ else{
 }
 
 downbtn.onclick=function(){
+  downimage();
+}
+function downimage(){
   var current = displayedImage.getAttribute('src');
   var index = images.indexOf(current)+ 1;
   if (index== 11){
@@ -95,3 +78,23 @@ else{
   displayImage(images[index]);
 }
 }
+
+ const inputs = document.querySelectorAll(`.controls input`);
+    function updateValue(){
+      const suffix = this.dataset.sizing || '';
+      document.documentElement.style.setProperty(`--${this.name}`,this.value+suffix);
+    }
+    
+    inputs.forEach(input => input.addEventListener('change',updateValue));
+    inputs.forEach(input => input.addEventListener('mousemove',updateValue));
+
+function changeImg(e){
+  if(e.keyCode=="38"){
+    upimage();
+  }
+  if(e.keyCode=="40"){
+    downimage();
+  }
+}
+
+window.addEventListener(`keydown`,changeImg);
